@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="648" viewBox="0 0 880 648" role="img" aria-label="Session terminal de Victor Norture, profil et projets">
+  <style>
+    .mono { font: 400 13.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; white-space: pre; }
+    .titre { font: 400 12px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; fill: #8b949e; }
+  </style>
+  <rect x="0.5" y="0.5" width="879" height="647" rx="10"
+        fill="#0d1117" stroke="#30363d"/>
+  <path d="M0.5 10.5 a10 10 0 0 1 10 -10 h859 a10 10 0 0 1 10 10 v32 h-879 z"
+        fill="#161b22" stroke="#30363d"/>
+  <circle cx="26" cy="21" r="6" fill="#ff5f57"/><circle cx="48" cy="21" r="6" fill="#febc2e"/><circle cx="70" cy="21" r="6" fill="#28c840"/>
+  <text x="440.0" y="26" text-anchor="middle" class="titre">victor@efrei: ~</text>
+    <text x="26" y="74" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">whoami</tspan></text>
+  <text x="26" y="95" class="mono"><tspan fill="#e6edf3">Victor Norture</tspan><tspan fill="#8b949e"> - cybersecurite et reseaux</tspan></text>
+  <text x="26" y="116" class="mono"><tspan fill="#8b949e">Bachelor 3, EFREI Paris - Ile-de-France</tspan></text>
+  <text x="26" y="158" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">cat objectif.txt</tspan></text>
+  <text x="26" y="179" class="mono"><tspan fill="#8b949e">Alternance </tspan><tspan fill="#e6edf3">2026-2027</tspan><tspan fill="#8b949e"> - administration systemes et reseaux,</tspan></text>
+  <text x="26" y="200" class="mono"><tspan fill="#8b949e">securite operationnelle, gestion des vulnerabilites</tspan></text>
+  <text x="26" y="221" class="mono"><tspan fill="#8b949e">Rythme  </tspan><tspan fill="#e6edf3">1 semaine de formation / 2 semaines en entreprise</tspan></text>
+  <text x="26" y="242" class="mono"><tspan fill="#8b949e">Base    </tspan><tspan fill="#e6edf3">Ile-de-France</tspan><tspan fill="#8b949e">, vehicule</tspan></text>
+  <text x="26" y="263" class="mono"><tspan fill="#8b949e">Certifie </tspan><tspan fill="#d29922">Microsoft Azure AZ-900</tspan></text>
+  <text x="26" y="305" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">ls -1 projets/</tspan></text>
+  <text x="26" y="326" class="mono"><tspan fill="#58a6ff">kev-triage</tspan><tspan fill="#8b949e">              238 vulnerabilites ramenees a 14 a traiter</tspan></text>
+  <text x="26" y="347" class="mono"><tspan fill="#58a6ff">ios-config-audit</tspan><tspan fill="#8b949e">        16 ecarts sur une configuration d'usine</tspan></text>
+  <text x="26" y="368" class="mono"><tspan fill="#58a6ff">azure-sftp-lab</tspan><tspan fill="#8b949e">          10 controles de securite apres deploiement</tspan></text>
+  <text x="26" y="389" class="mono"><tspan fill="#58a6ff">linux-hardening-audit</tspan><tspan fill="#8b949e">   18 regles, sshd_config et sysctl</tspan></text>
+  <text x="26" y="410" class="mono"><tspan fill="#58a6ff">authlog-watch</tspan><tspan fill="#8b949e">           4 alertes, la compromission en tete</tspan></text>
+  <text x="26" y="431" class="mono"><tspan fill="#58a6ff">veille-certfr</tspan><tspan fill="#8b949e">           100 avis par mois ramenes a 3 lignes utiles</tspan></text>
+  <text x="26" y="473" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">pytest -q --tb=no</tspan></text>
+  <text x="26" y="494" class="mono"><tspan fill="#3fb950">146 passed</tspan><tspan fill="#8b949e">  en 4.24s, sur les six projets</tspan></text>
+  <text x="26" y="536" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">contact --court</tspan></text>
+  <text x="26" y="557" class="mono"><tspan fill="#8b949e">linkedin.com/in/victor-norture</tspan></text>
+  <text x="26" y="578" class="mono"><tspan fill="#8b949e">tryhackme.com/p/vnorture</tspan></text>
+  <text x="26" y="620" class="mono"><tspan fill="#3fb950">victor@efrei</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3"></tspan></text>
+  <rect x="156" y="609" width="8" height="15" fill="#e6edf3"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>
+</svg>
