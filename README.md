@@ -4,7 +4,7 @@
 
 **Cybersécurité et réseaux** &nbsp;&nbsp;Bachelor 3, EFREI Paris
 
-Je fais tenir un flux de sécurité dans une décision courte.
+Je réduis un flux de sécurité à ce sur quoi on agit vraiment.
 
 <img src="https://img.shields.io/badge/Alternance-2026--2027-1a7f37?style=for-the-badge" alt="Alternance 2026-2027">
 <img src="https://img.shields.io/badge/Rythme-1_sem._école_%2F_2_sem._entreprise-24292f?style=for-the-badge" alt="Rythme">
@@ -41,27 +41,20 @@ Je fais tenir un flux de sécurité dans une décision courte.
 
 </div>
 
-Chaque chiffre est mesuré en exécutant le code, pas estimé.
-
-Les six répondent à la même question sous des angles différents : **comment
-réduire un flux de sécurité à ce sur quoi on agit vraiment, et dire pourquoi**.
-Un scanner qui rend 238 lignes ne se traite pas. Un déploiement vert ne prouve
-pas une configuration sûre. Une veille de cent avis par mois ne se lit pas.
+Chaque chiffre est mesuré en exécutant le code.
 
 ---
 
 ## Parcours
 
-**Khiplus**, groupe Audensiel - *stagiaire développement et cybersécurité*, 2026<br>
-Plateforme de gestion des vulnérabilités, type Vulnerability Operation Center.
-API REST Python et Flask, base SQL, console React, priorisation par croisement
-CVSS, EPSS et KEV.
+**Khiplus**, groupe Audensiel - *stage développement et cybersécurité*, 2026<br>
+Plateforme de gestion des vulnérabilités : API REST Python et Flask, base SQL,
+console React, priorisation CVSS + EPSS + KEV.
 
-**CGI**, La Défense - *stagiaire cloud et infrastructure*, 2025<br>
-Serveur de transfert SFTP sur Azure, conteneurisé. Clés SSH, droits RBAC,
-secrets en Key Vault, chiffrement du stockage.
+**CGI**, La Défense - *stage cloud et infrastructure*, 2025<br>
+Serveur SFTP sur Azure, conteneurisé. Clés SSH, RBAC, Key Vault, chiffrement.
 
-**EFREI Paris** - *Bachelor Cybersécurité et Réseaux*, titre RNCP 40745, niveau 6
+**EFREI Paris** - *Bachelor Cybersécurité et Réseaux*, RNCP 40745, niveau 6
 
 ---
 
