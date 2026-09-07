@@ -168,7 +168,7 @@ aria-label="Session terminal de Victor Norture, profil et projets">
 
 
 def main() -> None:
-    chemin = SORTIE / "terminal.svg"
+    chemin = SORTIE / "session.svg"
     chemin.write_text(terminal(), encoding="utf-8")
     print(f"{chemin.name} genere, {len(chemin.read_text(encoding='utf-8'))} octets")
 
