@@ -19,10 +19,10 @@
   <rect class="fond" x="0.5" y="0.5" width="419" height="149" rx="10"/>
   <rect class="accent" x="0.5" y="0.5" width="4" height="149" rx="2"/>
   <text class="titre" x="22" y="30">authlog-watch</text>
-  <text class="desc" x="22" y="50">Detection d'anomalies dans un auth.log</text>
+  <text class="desc" x="22" y="50">Détection d'anomalies dans un auth.log</text>
   <text class="metric" x="22" y="92">4</text>
-  <text class="unite" x="22" y="110">alertes, la compromission en tete</text>
+  <text class="unite" x="22" y="110">alertes, la compromission en tête</text>
   <line x1="22" y1="122" x2="398" y2="122" stroke="#d1d9e0" stroke-width="1" opacity="0.5"/>
-  <text class="pied" x="22" y="138">force brute, pulverisation, succes averes</text>
+  <text class="pied" x="22" y="138">force brute, pulvérisation, succès avérés</text>
   <text class="pied" x="398" y="138" text-anchor="end">19 tests</text>
 </svg>

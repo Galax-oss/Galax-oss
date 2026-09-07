@@ -55,9 +55,9 @@ CARTES = [
     {
         "fichier": "kev-triage.svg",
         "titre": "kev-triage",
-        "desc": "Triage de vulnerabilites par risque reel",
+        "desc": "Triage de vulnérabilités par risque réel",
         "metrique": "238 → 14",
-        "unite": "vulnerabilites trouvees, a traiter",
+        "unite": "vulnérabilités trouvées, à traiter",
         "pied": "OSV + EPSS + KEV de la CISA",
         "tests": "31 tests",
         "accent": "#cf222e",
@@ -67,7 +67,7 @@ CARTES = [
         "titre": "ios-config-audit",
         "desc": "Durcissement d'une configuration Cisco IOS",
         "metrique": "16 / 16",
-        "unite": "ecarts sur une config d'usine",
+        "unite": "écarts sur une config d'usine",
         "pied": "acces, auth, services, logs, interfaces",
         "tests": "47 tests",
         "accent": "#1BA0D7",
@@ -75,40 +75,40 @@ CARTES = [
     {
         "fichier": "azure-sftp-lab.svg",
         "titre": "azure-sftp-lab",
-        "desc": "Service SFTP sur Azure, decrit en Bicep",
+        "desc": "Service SFTP sur Azure, décrit en Bicep",
         "metrique": "10",
-        "unite": "controles apres deploiement",
-        "pied": "sans mot de passe ni cle de compte",
+        "unite": "contrôles après déploiement",
+        "pied": "sans mot de passe ni clé de compte",
         "tests": "11 tests",
         "accent": "#0078D4",
     },
     {
         "fichier": "linux-hardening-audit.svg",
         "titre": "linux-hardening-audit",
-        "desc": "Durcissement SSH et noyau d'un hote Linux",
+        "desc": "Durcissement SSH et noyau d'un hôte Linux",
         "metrique": "18",
-        "unite": "regles, sshd_config et sysctl",
-        "pied": "la premiere occurrence gagne, et ca se voit",
+        "unite": "règles, sshd_config et sysctl",
+        "pied": "la première occurrence gagne, et ça se voit",
         "tests": "22 tests",
         "accent": "#E95420",
     },
     {
         "fichier": "authlog-watch.svg",
         "titre": "authlog-watch",
-        "desc": "Detection d'anomalies dans un auth.log",
+        "desc": "Détection d'anomalies dans un auth.log",
         "metrique": "4",
-        "unite": "alertes, la compromission en tete",
-        "pied": "force brute, pulverisation, succes averes",
+        "unite": "alertes, la compromission en tête",
+        "pied": "force brute, pulvérisation, succès avérés",
         "tests": "19 tests",
         "accent": "#8250df",
     },
     {
         "fichier": "veille-certfr.svg",
         "titre": "veille-certfr",
-        "desc": "Veille CERT-FR filtree sur un inventaire",
+        "desc": "Veille CERT-FR filtrée sur un inventaire",
         "metrique": "100 → 3",
         "unite": "avis par mois, lignes utiles",
-        "pied": "avis, alertes et actualites separes",
+        "pied": "avis, alertes et actualités séparés",
         "tests": "16 tests",
         "accent": "#1a7f37",
     },
@@ -135,17 +135,19 @@ viewBox="0 0 {LARGEUR} {HAUTEUR}" role="img" aria-label="{escape(donnees['titre'
 
 def bandeau() -> str:
     """Une bande unique qui remplace la carte de statistiques du service tiers."""
-    largeur, hauteur = 860, 96
+    largeur, hauteur = 860, 104
     style = STYLE.format(police=POLICE, accent="#0969da")
-    chiffres = [("6", "projets"), ("146", "tests verts"), ("0", "dependance tierce")]
+    chiffres = [("6", "projets"), ("146", "tests verts"), ("0", "dépendance tierce")]
     blocs = []
+    pas = largeur / len(chiffres)
     for index, (valeur, libelle) in enumerate(chiffres):
-        x = 90 + index * 260
-        blocs.append(f'<text class="metric" x="{x}" y="52" text-anchor="middle">{valeur}</text>')
-        blocs.append(f'<text class="unite" x="{x}" y="72" text-anchor="middle">{libelle}</text>')
+        x = pas * (index + 0.5)
+        blocs.append(f'<text class="metric" x="{x:.0f}" y="50" text-anchor="middle">{valeur}</text>')
+        blocs.append(f'<text class="unite" x="{x:.0f}" y="68" text-anchor="middle">{libelle}</text>')
         if index < len(chiffres) - 1:
+            sep = pas * (index + 1)
             blocs.append(
-                f'<line x1="{x + 130}" y1="28" x2="{x + 130}" y2="70" '
+                f'<line x1="{sep:.0f}" y1="26" x2="{sep:.0f}" y2="66" '
                 'stroke="#d1d9e0" stroke-width="1" opacity="0.6"/>'
             )
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{largeur}" height="{hauteur}" \
@@ -153,7 +155,7 @@ viewBox="0 0 {largeur} {hauteur}" role="img" aria-label="En bref">
   <style>{style}</style>
   <rect class="fond" x="0.5" y="0.5" width="{largeur - 1}" height="{hauteur - 1}" rx="10"/>
   {''.join(blocs)}
-  <text class="pied" x="{largeur - 24}" y="72" text-anchor="end">chaque chiffre mesure en executant le code</text>
+  <text class="pied" x="{largeur / 2:.0f}" y="88" text-anchor="middle">chaque chiffre est mesuré en exécutant le code</text>
 </svg>
 """
 
