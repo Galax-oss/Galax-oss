@@ -1,20 +1,24 @@
-"""Genere le terminal du profil, en SVG.
+"""Genere la console du profil, en SVG.
 
 Pourquoi un SVG et pas un bloc de code Markdown. Un bloc de code rend bien le
-monospace mais ne permet ni chrome de fenetre, ni couleur choisie, ni curseur
-qui clignote. Ici la forme fait partie du propos : un profil de cybersecurite
-qui se lit comme une session shell se distingue immediatement d'un profil a
-badges, et il n'y a rien a comprendre avant de le lire.
+monospace mais ne permet ni couleur choisie, ni barre d'etat, ni curseur qui
+clignote. Ici la forme fait partie du propos : un profil de cybersecurite qui
+se lit comme une session shell se distingue d'un profil a badges, et il n'y a
+rien a comprendre avant de le lire.
 
 Pourquoi un fichier du depot et pas un service tiers. github-readme-stats
 rendait 503 au moment d'ecrire ces lignes. Un profil dont les visuels dependent
 d'un service gratuit affiche des images cassees le jour ou ce service tombe.
 
-Le terminal est volontairement sombre dans les deux themes : un terminal clair
-n'existe pas dans l'imaginaire, et une fenetre qui change de peau perd ce
-qu'elle raconte.
+Pas de chrome de fenetre. Les trois pastilles rondes sont une convention macOS,
+et elles situaient la scene au mauvais endroit. C'est une console Linux, avec
+sa barre d'etat tmux en bas : le detail que seul quelqu'un qui vit dans un
+terminal ajoute.
 
-    python assets/generer_terminal.py
+Le fond reste sombre dans les deux themes. Un terminal clair n'existe pas dans
+l'imaginaire, et une fenetre qui change de peau perd ce qu'elle raconte.
+
+    python assets/generer_console.py
 """
 
 from __future__ import annotations
@@ -29,45 +33,45 @@ MONO = (
     "'Liberation Mono', monospace"
 )
 
-MARGE_X = 26
-DEBUT_Y = 74
+LARGEUR = 880
+MARGE_X = 24
+DEBUT_Y = 38
 INTERLIGNE = 21
 TAILLE = 13.5
-LARGEUR = 880
-CHROME = 42
+HAUTEUR_STATUT = 26
 
 FOND = "#0d1117"
-BARRE = "#161b22"
 BORDURE = "#30363d"
 
 INVITE_UTILISATEUR = "#3fb950"
 INVITE_CHEMIN = "#58a6ff"
 COMMANDE = "#e6edf3"
-SORTIE_TEXTE = "#8b949e"
+TEXTE = "#8b949e"
 NOM_PROJET = "#58a6ff"
-CHIFFRE = "#e6edf3"
 VERT = "#3fb950"
 ORANGE = "#d29922"
 
-INVITE = "victor@efrei"
+# tmux par defaut : fond vert, texte sombre, fenetre active en clair.
+STATUT_FOND = "#2f6f3e"
+STATUT_TEXTE = "#0d1117"
+STATUT_ACTIF = "#f0f6fc"
+
+INVITE = "victor@srv-efrei"
 CHEMIN = "~"
 
-# Chaque entree : ("commande", "texte") ou ("sortie", [(couleur, texte), ...])
-# ou ("vide", None). Les colonnes des projets sont alignees a la main parce
-# qu'une police monospace le permet, et que c'est precisement l'effet cherche.
 SESSION = [
     ("commande", "whoami"),
-    ("sortie", [(COMMANDE, "Victor Norture"), (SORTIE_TEXTE, " - cybersécurité et réseaux")]),
-    ("sortie", [(SORTIE_TEXTE, "Bachelor 3, EFREI Paris - Île-de-France")]),
+    ("sortie", [(COMMANDE, "Victor Norture"), (TEXTE, " - cybersécurité et réseaux")]),
+    ("sortie", [(TEXTE, "Bachelor 3, EFREI Paris - Île-de-France")]),
     ("vide", None),
 
     ("commande", "cat objectif.txt"),
-    ("sortie", [(SORTIE_TEXTE, "Alternance "), (COMMANDE, "2026-2027"),
-                (SORTIE_TEXTE, " - administration systèmes et réseaux,")]),
-    ("sortie", [(SORTIE_TEXTE, "sécurité opérationnelle, gestion des vulnérabilités")]),
-    ("sortie", [(SORTIE_TEXTE, "Rythme  "), (COMMANDE, "1 semaine de formation / 2 semaines en entreprise")]),
-    ("sortie", [(SORTIE_TEXTE, "Base    "), (COMMANDE, "Île-de-France"), (SORTIE_TEXTE, ", véhiculé")]),
-    ("sortie", [(SORTIE_TEXTE, "Certifié "), (ORANGE, "Microsoft Azure AZ-900")]),
+    ("sortie", [(TEXTE, "Alternance "), (COMMANDE, "2026-2027"),
+                (TEXTE, " - administration systèmes et réseaux,")]),
+    ("sortie", [(TEXTE, "sécurité opérationnelle, gestion des vulnérabilités")]),
+    ("sortie", [(TEXTE, "Rythme    "), (COMMANDE, "1 semaine de formation / 2 semaines en entreprise")]),
+    ("sortie", [(TEXTE, "Base      "), (COMMANDE, "Île-de-France"), (TEXTE, ", véhiculé")]),
+    ("sortie", [(TEXTE, "Certifié  "), (ORANGE, "Microsoft Azure AZ-900")]),
     ("vide", None),
 
     ("commande", "ls -1 projets/"),
@@ -80,36 +84,37 @@ SESSION = [
     ("vide", None),
 
     ("commande", "pytest -q --tb=no"),
-    ("sortie", [(VERT, "146 passed"), (SORTIE_TEXTE, "  en 4.24s, sur les six projets")]),
+    ("sortie", [(VERT, "146 passed"), (TEXTE, "  en 4.24s, sur les six projets")]),
     ("vide", None),
 
-    ("commande", "contact --court"),
-    ("sortie", [(SORTIE_TEXTE, "linkedin.com/in/victor-norture")]),
-    ("sortie", [(SORTIE_TEXTE, "tryhackme.com/p/vnorture")]),
+    ("commande", "contact"),
+    ("sortie", [(TEXTE, "linkedin.com/in/victor-norture")]),
+    ("sortie", [(TEXTE, "tryhackme.com/p/vnorture")]),
     ("vide", None),
 ]
 
-LARGEUR_COLONNE = max(len(nom) for genre, valeur in SESSION
-                      if genre == "projet" for nom, _ in [valeur]) + 3
+LARGEUR_COLONNE = max(
+    len(nom) for genre, valeur in SESSION if genre == "projet" for nom, _ in [valeur]
+) + 3
 
 
 def _empan(couleur: str, texte: str) -> str:
     return f'<tspan fill="{couleur}">{escape(texte)}</tspan>'
 
 
-def _ligne_invite(y: int, commande: str) -> str:
+def _invite(y: int, commande: str) -> str:
     return (
         f'<text x="{MARGE_X}" y="{y}" class="mono">'
         f'{_empan(INVITE_UTILISATEUR, INVITE)}'
-        f'{_empan(SORTIE_TEXTE, ":")}'
+        f'{_empan(TEXTE, ":")}'
         f'{_empan(INVITE_CHEMIN, CHEMIN)}'
-        f'{_empan(SORTIE_TEXTE, "$ ")}'
+        f'{_empan(TEXTE, "$ ")}'
         f'{_empan(COMMANDE, commande)}'
         "</text>"
     )
 
 
-def terminal() -> str:
+def console() -> str:
     lignes: list[str] = []
     y = DEBUT_Y
 
@@ -118,7 +123,7 @@ def terminal() -> str:
             y += INTERLIGNE
             continue
         if genre == "commande":
-            lignes.append(_ligne_invite(y, valeur))
+            lignes.append(_invite(y, valeur))
         elif genre == "sortie":
             empans = "".join(_empan(couleur, texte) for couleur, texte in valeur)
             lignes.append(f'<text x="{MARGE_X}" y="{y}" class="mono">{empans}</text>')
@@ -128,48 +133,52 @@ def terminal() -> str:
             lignes.append(
                 f'<text x="{MARGE_X}" y="{y}" class="mono">'
                 f'{_empan(NOM_PROJET, nom)}'
-                f'{_empan(SORTIE_TEXTE, rembourrage + resume)}'
+                f'{_empan(TEXTE, rembourrage + resume)}'
                 "</text>"
             )
         y += INTERLIGNE
 
     # Derniere invite, avec le curseur qui clignote. Un seul element anime :
     # deux, et la page devient une vitrine.
-    lignes.append(_ligne_invite(y, ""))
+    lignes.append(_invite(y, ""))
     decalage = MARGE_X + len(f"{INVITE}:{CHEMIN}$ ") * TAILLE * 0.6
     lignes.append(
         f'<rect x="{decalage:.0f}" y="{y - 11}" width="8" height="15" fill="{COMMANDE}">'
         '<animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/>'
         "</rect>"
     )
-    hauteur = y + 28
 
-    points = "".join(
-        f'<circle cx="{x}" cy="21" r="6" fill="{couleur}"/>'
-        for x, couleur in ((26, "#ff5f57"), (48, "#febc2e"), (70, "#28c840"))
+    haut_statut = y + 16
+    hauteur = haut_statut + HAUTEUR_STATUT
+
+    statut = (
+        f'<rect x="1" y="{haut_statut}" width="{LARGEUR - 2}" height="{HAUTEUR_STATUT - 1}" '
+        f'fill="{STATUT_FOND}"/>'
+        f'<text x="14" y="{haut_statut + 17}" class="mono" fill="{STATUT_TEXTE}">[victor]</text>'
+        f'<text x="90" y="{haut_statut + 17}" class="mono" fill="{STATUT_ACTIF}">0:bash*</text>'
+        f'<text x="166" y="{haut_statut + 17}" class="mono" fill="{STATUT_TEXTE}">'
+        f'1:projets-  2:veille-</text>'
+        f'<text x="{LARGEUR - 14}" y="{haut_statut + 17}" text-anchor="end" class="mono" '
+        f'fill="{STATUT_TEXTE}">"srv-efrei"  08 sept. 2026</text>'
     )
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{LARGEUR}" height="{hauteur}" \
 viewBox="0 0 {LARGEUR} {hauteur}" role="img" \
-aria-label="Session terminal de Victor Norture, profil et projets">
+aria-label="Console de Victor Norture : profil, projets et resultats de tests">
   <style>
     .mono {{ font: 400 {TAILLE}px {MONO}; white-space: pre; }}
-    .titre {{ font: 400 12px {MONO}; fill: {SORTIE_TEXTE}; }}
   </style>
-  <rect x="0.5" y="0.5" width="{LARGEUR - 1}" height="{hauteur - 1}" rx="10"
+  <rect x="0.5" y="0.5" width="{LARGEUR - 1}" height="{hauteur - 1}" rx="6"
         fill="{FOND}" stroke="{BORDURE}"/>
-  <path d="M0.5 10.5 a10 10 0 0 1 10 -10 h{LARGEUR - 21} a10 10 0 0 1 10 10 v{CHROME - 10} h-{LARGEUR - 1} z"
-        fill="{BARRE}" stroke="{BORDURE}"/>
-  {points}
-  <text x="{LARGEUR / 2}" y="26" text-anchor="middle" class="titre">{INVITE}: {CHEMIN}</text>
-  {chr(10).join('  ' + l for l in lignes)}
+{chr(10).join('  ' + ligne for ligne in lignes)}
+  {statut}
 </svg>
 """
 
 
 def main() -> None:
-    chemin = SORTIE / "session.svg"
-    chemin.write_text(terminal(), encoding="utf-8")
+    chemin = SORTIE / "console.svg"
+    chemin.write_text(console(), encoding="utf-8")
     print(f"{chemin.name} genere, {len(chemin.read_text(encoding='utf-8'))} octets")
 
 
