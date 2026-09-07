@@ -1,11 +1,24 @@
+<div align="center">
+
 # Victor Norture
 
-Cybersécurité et réseaux, troisième année à l'EFREI Paris.
+**Cybersécurité et réseaux** &nbsp;&nbsp;Bachelor 3, EFREI Paris
+
 Je fais tenir un flux de sécurité dans une décision courte.
 
-**Alternance 2026-2027**, administration systèmes et réseaux ou sécurité
-opérationnelle. Une semaine de formation pour deux en entreprise.
-Île-de-France, véhiculé. Microsoft Azure AZ-900 obtenue.
+<img src="https://img.shields.io/badge/Alternance-2026--2027-1a7f37?style=for-the-badge" alt="Alternance 2026-2027">
+<img src="https://img.shields.io/badge/Rythme-1_sem._école_%2F_2_sem._entreprise-24292f?style=for-the-badge" alt="Rythme">
+<img src="https://img.shields.io/badge/Île--de--France-véhiculé-57606a?style=for-the-badge" alt="Mobilité">
+
+<a href="https://www.linkedin.com/in/victor-norture"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://tryhackme.com/p/vnorture"><img src="https://img.shields.io/badge/TryHackMe-212C42?style=for-the-badge&logo=tryhackme&logoColor=white" alt="TryHackMe"></a>
+<img src="https://img.shields.io/badge/Azure_AZ--900-obtenue-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="AZ-900 obtenue">
+
+<br>
+
+<img src="https://skillicons.dev/icons?i=python,flask,react,postgres,linux,windows,azure,docker,bash,git&perline=10" alt="Stack technique">
+
+</div>
 
 ---
 
@@ -20,8 +33,15 @@ opérationnelle. Une semaine de formation pour deux en entreprise.
 | [**azure-sftp-lab**](https://github.com/Galax-oss/azure-sftp-lab) | Service SFTP sur Azure en Bicep, sans mot de passe ni clé de compte | **10 contrôles** après déploiement |
 | [**veille-certfr**](https://github.com/Galax-oss/veille-certfr) | Filtre les publications du CERT-FR sur un inventaire de produits | 100 avis par mois, **3 lignes utiles** |
 
-146 tests, aucune dépendance à un service tiers. Chaque chiffre est mesuré en
-exécutant le code, pas estimé.
+<div align="center">
+
+![Tests](https://img.shields.io/badge/tests-146_passed-1a7f37?style=flat-square)
+![Dépendances](https://img.shields.io/badge/dépendance_tierce-0-24292f?style=flat-square)
+![Licence](https://img.shields.io/badge/licence-MIT-57606a?style=flat-square)
+
+</div>
+
+Chaque chiffre est mesuré en exécutant le code, pas estimé.
 
 Les six répondent à la même question sous des angles différents : **comment
 réduire un flux de sécurité à ce sur quoi on agit vraiment, et dire pourquoi**.
@@ -32,14 +52,14 @@ pas une configuration sûre. Une veille de cent avis par mois ne se lit pas.
 
 ## Parcours
 
-**CGI**, La Défense - *stagiaire cloud et infrastructure*, 2026<br>
-Serveur de transfert SFTP sur Azure, conteneurisé. Clés SSH, droits RBAC,
-secrets en Key Vault, chiffrement du stockage.
-
-**Khiplus**, groupe Audensiel - *stagiaire développement et cybersécurité*, 2025<br>
+**Khiplus**, groupe Audensiel - *stagiaire développement et cybersécurité*, 2026<br>
 Plateforme de gestion des vulnérabilités, type Vulnerability Operation Center.
 API REST Python et Flask, base SQL, console React, priorisation par croisement
 CVSS, EPSS et KEV.
+
+**CGI**, La Défense - *stagiaire cloud et infrastructure*, 2025<br>
+Serveur de transfert SFTP sur Azure, conteneurisé. Clés SSH, droits RBAC,
+secrets en Key Vault, chiffrement du stockage.
 
 **EFREI Paris** - *Bachelor Cybersécurité et Réseaux*, titre RNCP 40745, niveau 6
 
@@ -47,12 +67,8 @@ CVSS, EPSS et KEV.
 
 ## Compétences
 
-**Vulnérabilités** CVE, CVSS, EPSS, catalogue KEV de la CISA, CWE, CPE, scan de dépendances<br>
-**Réseaux et systèmes** TCP/IP et CCNA, Linux, Windows, administration de serveurs, SSH et SFTP<br>
-**Cloud** Microsoft Azure (RBAC, Key Vault, stockage chiffré), Bicep, Docker<br>
-**Développement** Python, Flask, React, SQL, Git<br>
-**Sécurité, en formation** test d'intrusion, ethical hacking, gestion des incidents, cryptographie
-
----
-
-[LinkedIn](https://www.linkedin.com/in/victor-norture) - [TryHackMe](https://tryhackme.com/p/vnorture)
+**Vulnérabilités** &nbsp;CVE, CVSS, EPSS, catalogue KEV de la CISA, CWE, CPE, scan de dépendances<br>
+**Réseaux et systèmes** &nbsp;TCP/IP et CCNA, Linux, Windows, administration de serveurs, SSH et SFTP<br>
+**Cloud** &nbsp;Microsoft Azure (RBAC, Key Vault, stockage chiffré), Bicep, Docker<br>
+**Développement** &nbsp;Python, Flask, React, SQL, Git<br>
+**Sécurité, en formation** &nbsp;test d'intrusion, ethical hacking, gestion des incidents, cryptographie
