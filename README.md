@@ -4,6 +4,8 @@
 
 **Cybersécurité et réseaux** &nbsp;&nbsp;Bachelor 3, EFREI Paris
 
+Je réduis un flux de sécurité à ce sur quoi on agit vraiment, et je dis pourquoi.
+
 <img src="https://img.shields.io/badge/Alternance-2026--2027-1a7f37?style=for-the-badge" alt="Alternance 2026-2027">
 <img src="https://img.shields.io/badge/Rythme-1_sem._école_%2F_2_sem._entreprise-24292f?style=for-the-badge" alt="Rythme">
 <img src="https://img.shields.io/badge/Île--de--France-véhiculé-57606a?style=for-the-badge" alt="Mobilité">
@@ -38,3 +40,19 @@
 <sub>Chaque chiffre est mesuré en exécutant le code.</sub>
 
 </div>
+
+---
+
+## Parcours
+
+**Khiplus**, groupe Audensiel &nbsp;-&nbsp; *stage développement et cybersécurité*, 2026<br>
+Plateforme de gestion des vulnérabilités : API REST Python et Flask, base SQL,
+console React, priorisation par croisement CVSS, EPSS et catalogue KEV.
+
+**CGI**, La Défense &nbsp;-&nbsp; *stage cloud et infrastructure*, 2025<br>
+Serveur de transfert SFTP sur Azure, conteneurisé sous Docker. Clés SSH, droits
+RBAC, secrets en Key Vault, chiffrement du stockage.
+
+**EFREI Paris** &nbsp;-&nbsp; *Bachelor Cybersécurité et Réseaux*, titre RNCP 40745, niveau 6<br>
+Réseaux et CCNA, administration système, test d'intrusion, cloud, cryptographie,
+gestion des incidents. Certification Azure AZ-900 obtenue, CCNA et CEH préparées.
