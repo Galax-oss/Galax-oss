@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/terminal.svg" alt="victor@efrei: ~ - Victor Norture, cybersécurité et réseaux, six projets, 146 tests" width="880">
+<img src="./assets/session.svg" alt="victor@efrei: ~ - Victor Norture, cybersécurité et réseaux, six projets, 146 tests" width="880">
 
 </div>
 
